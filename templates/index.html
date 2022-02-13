@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My First Flask App</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-md-9 col-sm-9 " style="margin:auto; margin-top:150px;">
+        <h3>Classify Iris Plants Into Three Species in this Web App</h3><hr>
+        <form action="/predict" method = "post">
+            <div class="row">
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">SepalLenght (cm)</label>
+                    <input type="text" name="sepalLenght" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">SepalWidth (cm)</label>
+                    <input type="text" name="sepalWidth" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">PetalLenght (cm)</label>
+                    <input type="text" name="petalLenght" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">PetalWidth (cm)</label>
+                    <input type="text" name="petalWidth" class="form-control">
+                </div>
+            </div>
+            </div>
+            <button type="reset" class="btn btn-danger">Clean</button>
+            <button type="submit" class="btn btn-success">Predict Class</button>
+        </form><br>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Classification Methods</th>
+                <th scope="col">Accuracy Score</th>                      
+                <th scope="col">Classification Results</th>                     
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Gradient Boosting</th>
+                    <td>% {{ accuracy_GBC }}</td>
+                    {% if predict_GBC == setosa %}
+                    <td style="color:red; font-weight:600;">Setosa / Class: {{ predict_GBC }}</td>                            
+                    {% elif predict_GBC == versicolor %}
+                    <td style="color:red; font-weight:600;">Versicolor  / Class: {{ predict_GBC }}</td>                           
+                    {% elif predict_GBC == virginica %}
+                    <td style="color:red; font-weight:600;">Virginica  / Class: {{ predict_GBC }}</td>                           
+                    {% else %}
+                    <td style="color:red; font-weight:600;">Cannot Find Class</td>
+                    {% endif %}
+                </tr>              
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
