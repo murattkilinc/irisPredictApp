@@ -42,7 +42,7 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Classification Method</th>
+                <th scope="col">Classification Methods</th>
                 <th scope="col">Accuracy Score</th>                      
                 <th scope="col">Classification Results</th>                     
               </tr>
