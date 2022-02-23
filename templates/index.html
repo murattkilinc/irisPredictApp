@@ -52,11 +52,11 @@
                     <th scope="row">Gradient Boosting</th>
                     <td>% {{ accuracy_GBC }}</td>
                     {% if predict_GBC == setosa %}
-                    <td style="color:red; font-weight:600;">Setosa / Class: {{ predict_GBC }}</td>                            
+                    <td style="color:red; font-weight:600;">Setosa / Species: {{ predict_GBC }}</td>                            
                     {% elif predict_GBC == versicolor %}
-                    <td style="color:red; font-weight:600;">Versicolor  / Class: {{ predict_GBC }}</td>                           
+                    <td style="color:red; font-weight:600;">Versicolor  / Species: {{ predict_GBC }}</td>                           
                     {% elif predict_GBC == virginica %}
-                    <td style="color:red; font-weight:600;">Virginica  / Class: {{ predict_GBC }}</td>                           
+                    <td style="color:red; font-weight:600;">Virginica  / Species: {{ predict_GBC }}</td>                           
                     {% else %}
                     <td style="color:red; font-weight:600;">Cannot Find Class</td>
                     {% endif %}
